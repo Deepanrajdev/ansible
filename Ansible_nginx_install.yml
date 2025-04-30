@@ -1,0 +1,16 @@
+---
+- name : Install and start Nginx
+  hosts: all
+  become : root
+
+  task:
+    - name : Install Nginx
+      shell : apt Install Nginx
+      apt:
+        name: Nginx
+        state: present
+    - name : start Nginx
+      service:
+        name : Nginx
+        state: start
+#ansible
